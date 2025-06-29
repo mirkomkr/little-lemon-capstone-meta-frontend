@@ -1,36 +1,27 @@
 # Little Lemon Capstone Project
 
-This repository contains the **Capstone project** for the **Meta Front-End Developer Certificate**.
+## 📚 Project Overview
 
-## 📚 About the Project
+The Capstone project represents the final step in my Meta Front-End Developer Certificate program, designed to consolidate and showcase the skills acquired throughout the course. This project involved building a fully functional, real-world web application—the Little Lemon table booking system—using modern front-end technologies and best practices.
 
-The Capstone project is designed to simulate a real-world development scenario where front-end skills are applied to solve an authentic business problem. Throughout this project, I integrated the core technologies and practices learned during the program — including **HTML**, **CSS**, **JavaScript**, **React**, and responsive design — to build a fully functional, user-friendly web application.
+## 🛠 What I Did
 
-The application developed here represents the culmination of months of learning and hands-on practice, serving as both a test and showcase of my capabilities as a front-end developer.
+- **React Refresher & Foundations:** I began the project with a brief recap of core React concepts covered earlier in the course, ensuring a solid foundation.
+- **Semantic HTML & SEO Optimization:** I structured the application using semantic HTML5 elements, incorporated meta tags, and implemented Open Graph protocol to enhance SEO and social media sharing.
+- **Responsive Design with CSS:** Using CSS Grid and other modern styling techniques, I created a clean, responsive, and user-friendly layout adaptable to different devices and screen sizes.
+- **Interactive Booking System:** I coded a dynamic table reservation system with React, implementing state management and navigation using React Router and React Hooks.
+- **Form Validation & UX:** I ensured form inputs are validated properly, enhancing user experience and preventing errors.
+- **Accessibility & Usability:** I applied accessibility best practices to make the application usable by all users, including those with disabilities. I also performed UX and UI usability evaluations to refine the interface.
+- **Testing:** I wrote unit tests to verify key functionalities and improve code reliability.
+- **Project Review:** I conducted a thorough self-assessment and participated in peer reviews, focusing on usability, accessibility, design quality, and code maintainability.
 
-## 🛠 Skills & Technologies Demonstrated
+## 🚀 Outcome
 
-- Semantic HTML5 and responsive CSS
-- Modern JavaScript (ES6+)
-- Component-based architecture with React
-- React Router for navigation
-- React Hooks for state and side-effect management
-- Controlled forms and input validation
-- Modular, maintainable, and readable code
-- Git version control and GitHub collaboration
-
-## 🚀 Project Goals
-
-- Solve a realistic, end-to-end front-end development challenge
-- Apply best practices in React development
-- Demonstrate full knowledge of the course curriculum
-- Create a **job-ready portfolio project** to share with recruiters and potential employers
+This Capstone project allowed me to integrate all my front-end development knowledge into a single, comprehensive application. It stands as a job-ready portfolio piece that demonstrates my ability to solve practical problems using React and related web technologies.
 
 ## 🧩 Course Context
 
-This project wraps up the Meta Front-End Developer Certificate program, bringing together all the core competencies developed in previous modules. The Capstone includes content reviews and guided development to ensure successful completion and readiness for the job market.
-
-> 💡 This project was built independently as part of the course requirements and is intended to highlight professional-level front-end development skills.
+This project is the culmination of the Meta Front-End Developer Certificate program, combining everything I’ve learned in previous modules with practical application and guided development to ensure readiness for professional front-end development roles.
 
 ## 🖥️ Run Locally
 
