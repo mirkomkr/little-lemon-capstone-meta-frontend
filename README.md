@@ -1,70 +1,47 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Little Lemon Capstone Project
 
-### Available Scripts
+This repository contains the **Capstone project** for the **Meta Front-End Developer Certificate**.
 
-In the project directory, you can run:
+## 📚 About the Project
 
-#### `npm start`
+The Capstone project is designed to simulate a real-world development scenario where front-end skills are applied to solve an authentic business problem. Throughout this project, I integrated the core technologies and practices learned during the program — including **HTML**, **CSS**, **JavaScript**, **React**, and responsive design — to build a fully functional, user-friendly web application.
 
-Runs the app in the development mode.  
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The application developed here represents the culmination of months of learning and hands-on practice, serving as both a test and showcase of my capabilities as a front-end developer.
 
-The page will reload when you make changes.  
-You may also see any lint errors in the console.
+## 🛠 Skills & Technologies Demonstrated
 
-#### `npm test`
+- Semantic HTML5 and responsive CSS
+- Modern JavaScript (ES6+)
+- Component-based architecture with React
+- React Router for navigation
+- React Hooks for state and side-effect management
+- Controlled forms and input validation
+- Modular, maintainable, and readable code
+- Git version control and GitHub collaboration
 
-Launches the test runner in the interactive watch mode.  
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Project Goals
 
-#### `npm run build`
+- Solve a realistic, end-to-end front-end development challenge
+- Apply best practices in React development
+- Demonstrate full knowledge of the course curriculum
+- Create a **job-ready portfolio project** to share with recruiters and potential employers
 
-Builds the app for production to the `build` folder.  
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🧩 Course Context
 
-The build is minified and the filenames include the hashes.  
-Your app is ready to be deployed!
+This project wraps up the Meta Front-End Developer Certificate program, bringing together all the core competencies developed in previous modules. The Capstone includes content reviews and guided development to ensure successful completion and readiness for the job market.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> 💡 This project was built independently as part of the course requirements and is intended to highlight professional-level front-end development skills.
 
-#### `npm run eject`
+## 🖥️ Run Locally
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Prerequisites
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Node.js & npm installed
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Setup
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However, we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
----
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+git clone https://github.com/mirkomkr/little-lemon-capstone-meta-frontend.git
+cd little-lemon-capstone-meta-frontend
+npm install
+npm start
