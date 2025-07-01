@@ -36,4 +36,3 @@ git clone https://github.com/mirkomkr/little-lemon-capstone-meta-frontend.git
 cd little-lemon-capstone-meta-frontend
 npm install
 npm start
-di
