@@ -4,6 +4,16 @@
 
 The Capstone project represents the final step in my Meta Front-End Developer Certificate program, designed to consolidate and showcase the skills acquired throughout the course. This project involved building a fully functional, real-world web application—the Little Lemon table booking system—using modern front-end technologies and best practices.
 
+## 🎨 UI Prototype
+
+Initial wireframes and prototypes were created in Figma during the Meta UX/UI Design course.  
+🔗 [View the Figma Design](https://www.figma.com/design/YOmJbScwFqpC5ns8DMpfmV/Little-Lemon-Coursera-Assignment---UX-UI-Portfolio-%E2%80%93-Meta-Certificate?node-id=14-2&p=f&t=RDjb9SwNXa0tiAo9-0)
+
+## 🎨 UI Prototype
+
+Initial wireframes and prototypes were created in Figma during the Meta UX/UI Design course.  
+[![View in Figma](https://img.shields.io/badge/View%20in%20Figma-📐-blue?logo=figma)](https://www.figma.com/design/YOmJbScwFqpC5ns8DMpfmV/Little-Lemon-Coursera-Assignment---UX-UI-Portfolio-%E2%80%93-Meta-Certificate?node-id=14-2&p=f&t=RDjb9SwNXa0tiAo9-0)
+
 ## 🛠 What I Did
 
 - **React Refresher & Foundations:** I began the project with a brief recap of core React concepts covered earlier in the course, ensuring a solid foundation.
