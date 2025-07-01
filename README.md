@@ -7,11 +7,6 @@ The Capstone project represents the final step in my Meta Front-End Developer Ce
 ## 🎨 UI Prototype
 
 Initial wireframes and prototypes were created in Figma during the Meta UX/UI Design course.  
-🔗 [View the Figma Design](https://www.figma.com/design/YOmJbScwFqpC5ns8DMpfmV/Little-Lemon-Coursera-Assignment---UX-UI-Portfolio-%E2%80%93-Meta-Certificate?node-id=14-2&p=f&t=RDjb9SwNXa0tiAo9-0)
-
-## 🎨 UI Prototype
-
-Initial wireframes and prototypes were created in Figma during the Meta UX/UI Design course.  
 [![View in Figma](https://img.shields.io/badge/View%20in%20Figma-📐-blue?logo=figma)](https://www.figma.com/design/YOmJbScwFqpC5ns8DMpfmV/Little-Lemon-Coursera-Assignment---UX-UI-Portfolio-%E2%80%93-Meta-Certificate?node-id=14-2&p=f&t=RDjb9SwNXa0tiAo9-0)
 
 ## 🛠 What I Did
