@@ -185,6 +185,55 @@
   background-color: #e1be13;
 }
 
+.booking-data {
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: #EDEFEE; /* come il form */
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 2rem;
+  font-family: karla, sans-serif;
+  color: #333;
+}
+
+.booking-data h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #494949;
+  font-weight: 700;
+  text-align: center;
+}
+
+.booking-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.booking-data-table th,
+.booking-data-table td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.booking-data-table th {
+  background-color: #F4CE14; /* giallo */
+  color: black;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.booking-data-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.booking-data-table tbody tr:hover {
+  background-color: #FFF9C4; /* un giallo molto chiaro */
+  cursor: default;
+}
+
 /* Pulsante X per chiudere il form */
 
 .close-form-button {
@@ -203,6 +252,42 @@
   margin-top: 1rem;
 }
 
+.confirmation-message {
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: #edefee; /* sfondo come form */
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  font-family: 'Karla', sans-serif;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.confirmation-message h1 {
+  color: #495e57; /* oliva scuro */
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.confirmation-message p {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* Hero image positioning */
 
 .hero-image img {
@@ -648,6 +733,19 @@
     bottom: 12px;
     right: 12px;
   }
+
+ .confirmation-message {
+    padding: 1.5rem 1rem;
+    margin: 1rem;
+  }
+
+  .confirmation-message h1 {
+    font-size: 2rem;
+  }
+
+  .confirmation-message p {
+    font-size: 1rem;
+  }
 }
 
 /* Tablet and medium devices: max-width 900px */
@@ -841,6 +939,19 @@
     bottom: 15px;
     right: 15px;
   }
+
+ .confirmation-message {
+    max-width: 90%;
+    margin: 2rem auto;
+  }
+
+  .confirmation-message h1 {
+    font-size: 2.2rem;
+  }
+
+  .confirmation-message p {
+    font-size: 1.1rem;
+  }
 }
 
 /* Laptop and tablets: max-width 1200px */
@@ -887,6 +998,9 @@
 
   .creator-image.second {
     left: 270px;
+  }
+   .confirmation-message {
+    max-width: 80%;
   }
 }
 

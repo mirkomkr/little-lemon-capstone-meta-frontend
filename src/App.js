@@ -11,6 +11,7 @@ import CallToAction from './CallToAction';
 import Specials from './Specials';
 import Testimonials from './Testimonials';
 import Creators from './Creators';
+import ConfirmedBooking from './ConfirmedBooking';
 
 function App() {
   return (
@@ -25,7 +26,8 @@ function App() {
           <Route path="/menu" element={<CallToAction />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/about" element={<Creators />} />
-      </Routes>
+          <Route path="/confirmed-booking" element={<ConfirmedBooking />} />
+        </Routes>
       <Footer />
     </Router>
   );

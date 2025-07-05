@@ -1,6 +1,8 @@
+/* global submitAPI, fetchAPI */
+
 import React, { Suspense, useEffect, useReducer, useState } from 'react';
 import { Element, scroller } from 'react-scroll';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import BookingPage from './BookingPage';
 import CallToAction from './CallToAction';
 import Specials from './Specials';
@@ -8,27 +10,40 @@ import Specials from './Specials';
 const Testimonials = React.lazy(() => import('./Testimonials'));
 const Creators = React.lazy(() => import('./Creators'));
 
-// Inizializza orari disponibili
+// Returns initial available time slots
 function initializeTimes() {
-  return ["18:00", "19:00", "20:00"];
+  const today = new Date();
+  return fetchAPI(today); 
 }
 
-// Reducer per aggiornare orari
+// Reducer to update time slots (currently always resets to initial)
 function updateTimes(state, action) {
   switch (action.type) {
     case 'DATE_CHANGE':
-      return initializeTimes();
+      return fetchAPI(new Date(action.date));
     default:
       return state;
   }
 }
 
 function Main() {
+  const navigate = useNavigate();
   const location = useLocation();
 
+ const submitForm = async (formData) => {
+  const success = await submitAPI(formData);
+  if (success) {
+    navigate('/confirmed-booking');
+  }
+  return success;
+};
+
+
+  // useReducer manages the available time slots
   const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
   const [selectedDate, setSelectedDate] = useState('');
 
+  // Scrolls to section if URL contains query like ?scrollTo=menu
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const scrollTo = params.get('scrollTo');
@@ -43,7 +58,7 @@ function Main() {
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
-    dispatch({ type: 'DATE_CHANGE', date });
+    dispatch({ type: 'DATE_CHANGE', date }); 
   };
 
   return (
@@ -53,6 +68,7 @@ function Main() {
           availableTimes={availableTimes}
           selectedDate={selectedDate}
           onDateChange={handleDateChange}
+          submitForm={submitForm}
         />
       </Element>
 
