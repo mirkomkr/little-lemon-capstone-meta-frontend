@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
 import { Link as ScrollLink, scroller } from 'react-scroll';
 
-// Sposto scrollOffsets fuori dal componente per evitare warning ESLint
+// Scroll offsets for each section
 const scrollOffsets = {
   top: 0,
   reservations: 0,
@@ -17,7 +17,7 @@ function Nav() {
   const navigate = useNavigate();
   const [showScrollTop, setShowScrollTop] = useState(false);
 
-  // Scroll automatico quando arrivo su '/' da un'altra pagina con sezione da scrollare
+  // Scroll to section if returning to home with a stored section
   useEffect(() => {
     const sectionToScroll = sessionStorage.getItem('scrollToSection');
     if (location.pathname === '/' && sectionToScroll) {
@@ -30,11 +30,11 @@ function Nav() {
     }
   }, [location]);
 
-  // Nav per la home con ScrollLink e gestione freccia
+  // Navigation for homepage with smooth scroll links
   if (location.pathname === '/') {
     return (
       <>
-        <nav>
+        <nav aria-label="Main Navigation">
           <ul className="nav-list">
             <li>
               <ScrollLink
@@ -43,6 +43,9 @@ function Nav() {
                 duration={600}
                 offset={scrollOffsets.top}
                 onClick={() => setShowScrollTop(true)}
+                aria-label="Home section"
+                role="link"
+                tabIndex={0}
               >
                 Home
               </ScrollLink>
@@ -54,6 +57,9 @@ function Nav() {
                 duration={600}
                 offset={scrollOffsets.reservations}
                 onClick={() => setShowScrollTop(true)}
+                aria-label="Reservations section"
+                role="link"
+                tabIndex={0}
               >
                 Reservations
               </ScrollLink>
@@ -65,6 +71,9 @@ function Nav() {
                 duration={600}
                 offset={scrollOffsets.order}
                 onClick={() => setShowScrollTop(true)}
+                aria-label="Order Online section"
+                role="link"
+                tabIndex={0}
               >
                 Order Online
               </ScrollLink>
@@ -76,6 +85,9 @@ function Nav() {
                 duration={600}
                 offset={scrollOffsets.menu}
                 onClick={() => setShowScrollTop(true)}
+                aria-label="Menu section"
+                role="link"
+                tabIndex={0}
               >
                 Menu
               </ScrollLink>
@@ -87,6 +99,9 @@ function Nav() {
                 duration={600}
                 offset={scrollOffsets.testimonials}
                 onClick={() => setShowScrollTop(true)}
+                aria-label="Testimonials section"
+                role="link"
+                tabIndex={0}
               >
                 Testimonials
               </ScrollLink>
@@ -98,6 +113,9 @@ function Nav() {
                 duration={600}
                 offset={scrollOffsets.about}
                 onClick={() => setShowScrollTop(true)}
+                aria-label="About section"
+                role="link"
+                tabIndex={0}
               >
                 About
               </ScrollLink>
@@ -111,7 +129,8 @@ function Nav() {
               window.scrollTo({ top: 0, behavior: 'smooth' });
               setShowScrollTop(false);
             }}
-            aria-label="Torna in cima"
+            aria-label="Scroll to top"
+            type="button"
           >
             ↑
           </button>
@@ -120,7 +139,7 @@ function Nav() {
     );
   }
 
-  // Nav per altre pagine con navigate e sessionStorage per scroll differito
+  // Navigation for other pages, uses buttons for accessibility and navigation
   const handleNavigateToSection = (section) => {
     if (section === 'top') {
       navigate('/');
@@ -134,35 +153,35 @@ function Nav() {
 
   return (
     <>
-      <nav>
+      <nav aria-label="Main Navigation">
         <ul className="nav-list">
           <li>
-            <RouterLink to="/" onClick={() => setShowScrollTop(false)}>
+            <RouterLink to="/" onClick={() => setShowScrollTop(false)} aria-label="Home">
               Home
             </RouterLink>
           </li>
           <li>
-            <button onClick={() => handleNavigateToSection('reservations')}>
+            <button onClick={() => handleNavigateToSection('reservations')} aria-label="Go to Reservations section" type="button">
               Reservations
             </button>
           </li>
           <li>
-            <button onClick={() => handleNavigateToSection('order')}>
+            <button onClick={() => handleNavigateToSection('order')} aria-label="Go to Order Online section" type="button">
               Order Online
             </button>
           </li>
           <li>
-            <button onClick={() => handleNavigateToSection('menu')}>
+            <button onClick={() => handleNavigateToSection('menu')} aria-label="Go to Menu section" type="button">
               Menu
             </button>
           </li>
           <li>
-            <button onClick={() => handleNavigateToSection('testimonials')}>
+            <button onClick={() => handleNavigateToSection('testimonials')} aria-label="Go to Testimonials section" type="button">
               Testimonials
             </button>
           </li>
           <li>
-            <button onClick={() => handleNavigateToSection('about')}>
+            <button onClick={() => handleNavigateToSection('about')} aria-label="Go to About section" type="button">
               About
             </button>
           </li>
@@ -175,7 +194,8 @@ function Nav() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
             setShowScrollTop(false);
           }}
-          aria-label="Torna in cima"
+          aria-label="Scroll to top"
+          type="button"
         >
           ↑
         </button>

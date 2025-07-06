@@ -1,19 +1,27 @@
 import React from "react";
 
+/**
+ * Displays a table of current bookings.
+ * Accessible table with descriptive aria-label.
+ */
 function BookingDataTable({ bookingData }) {
   if (!bookingData || bookingData.length === 0) {
     return <p>No bookings found.</p>;
   }
 
   return (
-    <table aria-label="Current Bookings" className="booking-data-table">
+    <table
+      aria-label="Current Bookings"
+      className="booking-data-table"
+      role="table" // Explicit table role for assistive tech
+    >
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Date</th>
-          <th>Time</th>
-          <th>Guests</th>
-          <th>Occasion</th>
+          <th scope="col">ID</th>
+          <th scope="col">Date</th>
+          <th scope="col">Time</th>
+          <th scope="col">Guests</th>
+          <th scope="col">Occasion</th>
         </tr>
       </thead>
       <tbody>

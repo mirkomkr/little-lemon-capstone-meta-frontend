@@ -11,8 +11,7 @@ function BookingForm({ availableTimes, selectedDate, onDateChange, submitForm })
 
   const [isFormValid, setIsFormValid] = useState(false);
 
-
-  // Sincronizza la data iniziale con lo stato globale quando cambia
+  // Sync form date with selectedDate prop
   useEffect(() => {
     setFormData((prev) => ({
       ...prev,
@@ -20,7 +19,7 @@ function BookingForm({ availableTimes, selectedDate, onDateChange, submitForm })
     }));
   }, [selectedDate]);
 
-  // Aggiorna il primo orario disponibile quando cambia
+  // Update time when availableTimes changes
   useEffect(() => {
     setFormData((prev) => ({
       ...prev,
@@ -28,9 +27,10 @@ function BookingForm({ availableTimes, selectedDate, onDateChange, submitForm })
     }));
   }, [availableTimes]);
 
+  // Validate form fields
   useEffect(() => {
     const { date, time, guests, occasion } = formData;
-    const valid = date && time && occasion && guests >=1 && guests <= 10;
+    const valid = date && time && occasion && guests >= 1 && guests <= 10;
     setIsFormValid(valid);
   }, [formData]);
 
@@ -50,14 +50,21 @@ function BookingForm({ availableTimes, selectedDate, onDateChange, submitForm })
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  await submitForm(formData);  // non serve salvare il risultato
-};
-
+    e.preventDefault();
+    await submitForm(formData);
+  };
 
   return (
-    <form className="booking-form" onSubmit={handleSubmit} aria-labelledby="booking-form-title" role="form">
-      <h2 id="booking-form-title" className="visually-hidden">Reservation Form</h2>
+    <form
+      className="booking-form"
+      onSubmit={handleSubmit}
+      aria-labelledby="booking-form-title"
+      role="form"
+    >
+      {/* Hidden heading for screen readers */}
+      <h2 id="booking-form-title" className="visually-hidden">
+        Reservation Form
+      </h2>
 
       <div>
         <label htmlFor="res-date">Choose date</label>
@@ -67,6 +74,7 @@ function BookingForm({ availableTimes, selectedDate, onDateChange, submitForm })
           value={formData.date}
           onChange={handleChange}
           aria-required="true"
+          aria-label="Choose date"
           required
         />
       </div>
@@ -78,10 +86,13 @@ function BookingForm({ availableTimes, selectedDate, onDateChange, submitForm })
           value={formData.time}
           onChange={handleChange}
           aria-required="true"
+          aria-label="Choose time"
           required
         >
           {availableTimes.map((time) => (
-            <option key={time} value={time}>{time}</option>
+            <option key={time} value={time}>
+              {time}
+            </option>
           ))}
         </select>
       </div>
@@ -96,6 +107,7 @@ function BookingForm({ availableTimes, selectedDate, onDateChange, submitForm })
           value={formData.guests}
           onChange={handleChange}
           aria-required="true"
+          aria-label="Number of guests"
           required
         />
       </div>
@@ -106,6 +118,8 @@ function BookingForm({ availableTimes, selectedDate, onDateChange, submitForm })
           id="occasion"
           value={formData.occasion}
           onChange={handleChange}
+          aria-label="Occasion"
+          aria-required="true"
           required
         >
           <option>Birthday</option>
@@ -113,7 +127,14 @@ function BookingForm({ availableTimes, selectedDate, onDateChange, submitForm })
         </select>
       </div>
 
-      <button type="submit" className="booking-submit">Make Your Reservation</button>
+      <button
+        type="submit"
+        className="booking-submit"
+        disabled={!isFormValid}
+        aria-label="Make your reservation"
+      >
+        Make Your Reservation
+      </button>
     </form>
   );
 }

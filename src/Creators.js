@@ -4,7 +4,7 @@ import creator2 from './assets/Mario and Adrian b.jpg';
 
 function Creators() {
   return (
-    <section className="creators-section">
+    <section className="creators-section" aria-label="About the creators">
       <div className="creators-text">
         <h2 className="marzaki">Little Lemon</h2>
         <h3 className="marzaki">Chicago</h3>
@@ -17,15 +17,15 @@ function Creators() {
       <div className="creators-images">
         <img 
           src={creator1} 
-          alt="Creator 1" 
+          alt="Mario and Adrian, founders of Little Lemon" 
           className="creator-image first" 
-          loading="lazy"  // <-- lazy loading immagine
+          loading="lazy"
         />
         <img 
           src={creator2} 
-          alt="Creator 2" 
+          alt="Mario and Adrian smiling together" 
           className="creator-image second" 
-          loading="lazy"  // <-- lazy loading immagine
+          loading="lazy"
         />
       </div>
     </section>

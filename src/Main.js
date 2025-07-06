@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import BookingPage from './BookingPage';
 import CallToAction from './CallToAction';
 import Specials from './Specials';
-import { initializeTimes, updateTimes } from './bookingUtils'; // <-- IMPORT FUNZIONI
+import { initializeTimes, updateTimes } from './bookingUtils';
 
 const Testimonials = React.lazy(() => import('./Testimonials'));
 const Creators = React.lazy(() => import('./Creators'));
@@ -14,6 +14,7 @@ function Main() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Handles booking form submission and redirects on success
   const submitForm = async (formData) => {
     const success = await submitAPI(formData);
     if (success) {
@@ -22,11 +23,11 @@ function Main() {
     return success;
   };
 
-  // useReducer gestisce gli orari disponibili
+  // Manage available booking times and selected date
   const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
   const [selectedDate, setSelectedDate] = useState('');
 
-  // Scroll automatico se l'URL contiene ?scrollTo=...
+  // Scroll to section if URL contains ?scrollTo=...
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const scrollTo = params.get('scrollTo');
@@ -46,7 +47,7 @@ function Main() {
 
   return (
     <>
-      <Element name="reservations">
+      <Element name="reservations" aria-label="Reservations Section">
         <BookingPage
           availableTimes={availableTimes}
           selectedDate={selectedDate}
@@ -55,15 +56,23 @@ function Main() {
         />
       </Element>
 
-      <Element name="order"><CallToAction /></Element>
-      <Element name="menu"><Specials /></Element>
+      <Element name="order" aria-label="Order Section">
+        <CallToAction />
+      </Element>
+      <Element name="menu" aria-label="Menu Section">
+        <Specials />
+      </Element>
 
-      <Suspense fallback={<div>Loading testimonials...</div>}>
-        <Element name="testimonials"><Testimonials /></Element>
+      <Suspense fallback={<div aria-live="polite">Loading testimonials...</div>}>
+        <Element name="testimonials" aria-label="Testimonials Section">
+          <Testimonials />
+        </Element>
       </Suspense>
 
-      <Suspense fallback={<div>Loading creators...</div>}>
-        <Element name="about"><Creators /></Element>
+      <Suspense fallback={<div aria-live="polite">Loading creators...</div>}>
+        <Element name="about" aria-label="About Section">
+          <Creators />
+        </Element>
       </Suspense>
     </>
   );

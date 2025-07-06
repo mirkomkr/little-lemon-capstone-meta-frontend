@@ -33,20 +33,20 @@ const testimonials = [
 
 function Testimonials() {
   return (
-    <section className="testimonials-section">
+    <section className="testimonials-section" aria-label="Customer Testimonials">
       <h2 className="testimonials-title marzaki">Testimonials</h2>
       <div className="testimonials-container">
         {testimonials.map((testimonial, index) => (
-          <div className="testimonial-card" key={index}>
-            <div className="testimonial-rating">
+          <div className="testimonial-card" key={index} role="region" aria-label={`Testimonial from ${testimonial.name}`}>
+            <div className="testimonial-rating" aria-label={`Rating: ${testimonial.rating} out of 5`}>
               {'★'.repeat(testimonial.rating)}
               {'☆'.repeat(5 - testimonial.rating)}
             </div>
-           <img
-            src={testimonial.image}
-            alt={testimonial.name}
-            className="testimonial-image"
-            loading="lazy"
+            <img
+              src={testimonial.image}
+              alt={`Profile of ${testimonial.name}`}
+              className="testimonial-image"
+              loading="lazy"
             />
             <p className="testimonial-review">“{testimonial.review}”</p>
             <p className="testimonial-name">— {testimonial.name}</p>

@@ -5,6 +5,7 @@ import BookingForm from './BookingForm';
 import BookingDataTable from './BookingDataTable';
 
 function BookingPage({ availableTimes, selectedDate, onDateChange, submitForm }) {
+  // Load booking data from localStorage or use default data
   const [bookingData, setBookingData] = useState(() => {
     const saved = localStorage.getItem('bookingData');
     return saved ? JSON.parse(saved) : [
@@ -13,6 +14,7 @@ function BookingPage({ availableTimes, selectedDate, onDateChange, submitForm })
     ];
   });
 
+  // Persist booking data to localStorage
   useEffect(() => {
     localStorage.setItem('bookingData', JSON.stringify(bookingData));
   }, [bookingData]);
@@ -21,6 +23,7 @@ function BookingPage({ availableTimes, selectedDate, onDateChange, submitForm })
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const isSmallScreen = windowWidth <= 900;
 
+  // Track window size for responsive layout
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
@@ -30,6 +33,7 @@ function BookingPage({ availableTimes, selectedDate, onDateChange, submitForm })
   const handleReservation = () => setShowForm(true);
   const handleCloseForm = () => setShowForm(false);
 
+  // Add a new booking entry
   const addBooking = (newBooking) => {
     setBookingData((prev) => [
       ...prev,
@@ -38,6 +42,7 @@ function BookingPage({ availableTimes, selectedDate, onDateChange, submitForm })
     setShowForm(false);
   };
 
+  // Handle booking form submission
   const handleBookingSubmit = async (formData) => {
     const success = await submitForm(formData);
     if (success) {
@@ -48,7 +53,7 @@ function BookingPage({ availableTimes, selectedDate, onDateChange, submitForm })
   };
 
   return (
-    <main className="site-main">
+    <main className="site-main" role="main">
       <div className="content-wrapper">
         <div className="hero-text">
           <h1 className="marzaki">Little Lemon</h1>
@@ -58,16 +63,23 @@ function BookingPage({ availableTimes, selectedDate, onDateChange, submitForm })
             Book your table now and enjoy a delicious dinner!
           </p>
 
-          <button className="reserve-button" onClick={handleReservation}>
+          <button
+            className="reserve-button"
+            onClick={handleReservation}
+            aria-label="Reserve a Table"
+            type="button"
+          >
             Reserve a Table
           </button>
 
+          {/* Show booking form and data table on small screens */}
           {showForm && isSmallScreen && (
-            <div className="booking-form-wrapper form-inside">
+            <div className="booking-form-wrapper form-inside" role="dialog" aria-modal="true" aria-label="Booking Form">
               <button
                 className="close-form-button"
                 onClick={handleCloseForm}
                 aria-label="Close booking form"
+                type="button"
               >
                 ×
               </button>
@@ -79,7 +91,7 @@ function BookingPage({ availableTimes, selectedDate, onDateChange, submitForm })
                 submitForm={handleBookingSubmit}
               />
 
-              <section className="booking-data">
+              <section className="booking-data" aria-label="Current Bookings">
                 <h2>Current Bookings</h2>
                 <BookingDataTable bookingData={bookingData} />
               </section>
@@ -92,13 +104,15 @@ function BookingPage({ availableTimes, selectedDate, onDateChange, submitForm })
         </div>
       </div>
 
+      {/* Show booking form and data table on large screens */}
       {showForm && !isSmallScreen && (
         <>
-          <div className="booking-form-wrapper form-outside">
+          <div className="booking-form-wrapper form-outside" role="dialog" aria-modal="true" aria-label="Booking Form">
             <button
               className="close-form-button"
               onClick={handleCloseForm}
               aria-label="Close booking form"
+              type="button"
             >
               ×
             </button>
@@ -111,7 +125,7 @@ function BookingPage({ availableTimes, selectedDate, onDateChange, submitForm })
             />
           </div>
 
-          <section className="booking-data">
+          <section className="booking-data" aria-label="Current Bookings">
             <h2>Current Bookings</h2>
             <BookingDataTable bookingData={bookingData} />
           </section>
