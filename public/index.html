@@ -4,29 +4,38 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#000000">
-    <meta name="description" content="Little Lemon - Mediterranean Restaurant">
-    <meta name="og:title" content="Little Lemon Restaurant">
-    <meta name="og:description" content="Little Lemon, New York’s top restaurant for authentic Mediterranean cuisine. Enjoy fresh, flavorful dishes in a cozy atmosphere. Book your table today for an unforgettable dining experience.">
-    <meta name="og:image" content="http://localhost:3000/static/media/Logo.6c132dfefa69396bba43f72aa595e62f.svg">
+    <meta name="description" content="Little Lemon - Mediterranean Restaurant in New York. Enjoy authentic Mediterranean cuisine, fresh ingredients, and a cozy atmosphere. Book your table today.">
+    <meta property="og:title" content="Little Lemon Restaurant">
+    <meta property="og:description" content="Little Lemon, New York’s top restaurant for authentic Mediterranean cuisine. Enjoy fresh, flavorful dishes in a cozy atmosphere. Book your table today for an unforgettable dining experience.">
+    <meta property="og:image" content="http://localhost:3000/static/media/Logo.6c132dfefa69396bba43f72aa595e62f.svg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta name="keywords" content="Little Lemon, Mediterranean Restaurant, New York, Reservations, Menu, Specials, Authentic Cuisine, Book Table">
+    <meta name="author" content="Little Lemon Restaurant">
 
-    <title>Little Lemon Restaurant</title>
+    <title>Little Lemon Restaurant | Authentic Mediterranean Cuisine in New York</title>
 
     <!-- Favicon & Icons -->
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/web-app-manifest-192x192.png">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
 
     <!-- Fonts Optimization -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" aria-label="Preconnect to Google Fonts">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin aria-label="Preconnect to Google Fonts Static">
     <link
       href="https://fonts.googleapis.com/css2?family=Karla&family=Marzaki+Text&display=swap"
       rel="stylesheet"
+      aria-label="Karla and Marzaki Text Fonts"
     >
-    <script src="%PUBLIC_URL%/api.js"></script>
+
+    <!-- API Script for Booking Functionality -->
+    <script src="%PUBLIC_URL%/api.js" aria-label="Little Lemon API"></script>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <noscript>
+      <strong>You need to enable JavaScript to run this app.</strong>
+    </noscript>
+    <div id="root" role="main" aria-label="Little Lemon Restaurant Application Root"></div>
   </body>
 </html>
