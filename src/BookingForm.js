@@ -9,6 +9,9 @@ function BookingForm({ availableTimes, selectedDate, onDateChange, submitForm })
     occasion: 'Birthday',
   });
 
+  const [isFormValid, setIsFormValid] = useState(false);
+
+
   // Sincronizza la data iniziale con lo stato globale quando cambia
   useEffect(() => {
     setFormData((prev) => ({
@@ -24,6 +27,12 @@ function BookingForm({ availableTimes, selectedDate, onDateChange, submitForm })
       time: availableTimes[0] || '',
     }));
   }, [availableTimes]);
+
+  useEffect(() => {
+    const { date, time, guests, occasion } = formData;
+    const valid = date && time && occasion && guests >=1 && guests <= 10;
+    setIsFormValid(valid);
+  }, [formData]);
 
   const handleChange = (e) => {
     const { id, value } = e.target;
