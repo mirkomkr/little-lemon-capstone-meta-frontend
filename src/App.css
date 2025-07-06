@@ -1,6 +1,8 @@
 @import './index.css';
 
-/* Header and Nav base */
+/* =========================
+   Header and Navigation
+   ========================= */
 
 .site-header {
   display: grid;
@@ -30,7 +32,6 @@
   cursor: pointer;
 }
 
-/* solo gli <a> dentro <li> */
 .nav-list li a, 
 .nav-list li button {
   text-decoration: none;
@@ -48,7 +49,9 @@
   transition: all 0.3s ease;
 }
 
-/* Main content */
+/* =========================
+   Main Content & Hero Section
+   ========================= */
 
 .site-main {
   position: relative;
@@ -70,7 +73,7 @@
   gap: 2rem;
   align-items: center;
   position: relative;
-  z-index: 2; /* sopra l'immagine */
+  z-index: 2;
 }
 
 .hero-text h1 {
@@ -108,18 +111,29 @@
   margin-top: 0;
   display: inline-block;
   position: relative;
-  width: 300px;       /* larghezza fissa */
-  max-width: none;    /* rimuove eventuali limiti */
-  text-align: center; /* centra testo se necessario */
-  box-sizing: border-box; /* assicura che padding non aumenti larghezza */
+  width: 300px;
+  max-width: none;
+  text-align: center;
+  box-sizing: border-box;
 }
 
+.hero-image img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  object-fit: cover;
+  border-radius: 16px;
+}
 
-/* Contenitore del form di prenotazione sotto il bottone */
+/* =========================
+   Booking Form
+   ========================= */
 
 .booking-form-wrapper {
   max-width: 400px;
-  margin-top: 1rem; /* spazio sotto il bottone */
+  margin-top: 1rem;
   background-color: #EDEFEE;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -128,8 +142,6 @@
   position: relative;
   z-index: 10;
 }
-
-/* Form vero e proprio */
 
 .booking-form {
   display: grid;
@@ -140,17 +152,15 @@
 
 .booking-form-wrapper {
   max-width: 400px;
-  margin: 1rem 0 0 20rem; /* margin-left solo da 901px in su */
+  margin: 1rem 0 0 20rem;
   position: relative;
 }
-
-
 
 .booking-form label {
   font-weight: 600;
   color: #333;
   font-size: 1rem;
-  margin: 0; /* rimuovo margini per uniformità */
+  margin: 0;
 }
 
 .booking-form input,
@@ -188,7 +198,7 @@
 .booking-data {
   max-width: 800px;
   margin: 2rem auto;
-  background-color: #EDEFEE; /* come il form */
+  background-color: #EDEFEE;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   padding: 2rem;
@@ -219,7 +229,7 @@
 }
 
 .booking-data-table th {
-  background-color: #F4CE14; /* giallo */
+  background-color: #F4CE14;
   color: black;
   font-weight: 700;
   text-transform: uppercase;
@@ -230,11 +240,9 @@
 }
 
 .booking-data-table tbody tr:hover {
-  background-color: #FFF9C4; /* un giallo molto chiaro */
+  background-color: #FFF9C4;
   cursor: default;
 }
-
-/* Pulsante X per chiudere il form */
 
 .close-form-button {
   position: absolute;
@@ -252,11 +260,12 @@
   margin-top: 1rem;
 }
 
+/* Confirmation Message */
 .confirmation-message {
   max-width: 600px;
   margin: 4rem auto;
   padding: 2rem;
-  background-color: #edefee; /* sfondo come form */
+  background-color: #edefee;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   text-align: center;
@@ -265,7 +274,7 @@
 }
 
 .confirmation-message h1 {
-  color: #495e57; /* oliva scuro */
+  color: #495e57;
   font-size: 2.5rem;
   margin-bottom: 1rem;
   font-weight: 700;
@@ -282,26 +291,15 @@
     opacity: 0;
     transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-/* Hero image positioning */
 
-.hero-image img {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: 0 auto;
-  object-fit: cover;
-  border-radius: 16px;
-}
-
-
-/* Dishes Header Section */
+/* =========================
+   Dishes Section
+   ========================= */
 
 .dishes-header {
   max-width: 1200px;
@@ -379,7 +377,6 @@
 }
 
 .dish-name {
-
   font-size: 24px;
   font-weight: 700;
   color: black;
@@ -424,13 +421,14 @@
   width: max-content;
 }
 
-/* Testimonials Section */
+/* =========================
+   Testimonials Section
+   ========================= */
 
 .testimonials-section {
   background-color: #f4f4f4;
   padding: 4rem 1rem;
   margin-top: 6rem;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -452,7 +450,6 @@
   justify-content: center;
   flex-wrap: wrap;
 }
-
 
 .testimonial-card {
   background-color: white;
@@ -494,7 +491,9 @@
   font-size: 0.85rem;
 }
 
-/* Creator Section */
+/* =========================
+   Creators Section
+   ========================= */
 
 .creators-section {
   max-width: 1200px;
@@ -564,7 +563,9 @@
   transform: translateY(-50%);
 }
 
-/* Footer base */
+/* =========================
+   Footer
+   ========================= */
 
 .site-footer {
   background-color: #f4f4f4;
@@ -623,6 +624,7 @@
   text-decoration: underline;
 }
 
+/* Scroll to Top Button */
 .scroll-top-btn {
   position: fixed;
   bottom: 20px;
@@ -644,58 +646,47 @@
   background-color: #e76f51;
 }
 
-/* --------------------------------------- */
-/* MEDIA QUERIES - Mobile First Approach */
+/* =========================
+   Responsive Styles
+   ========================= */
 
 /* Mobile: max-width 480px */
 @media (max-width: 480px) {
-    .reserve-button {
-    width: 200px !important;/* smaller button for small screens */
+  .reserve-button {
+    width: 200px !important;
   }
-
   .hero-text h1 {
     font-size: 2.4rem;
   }
-
   .hero-text h3 {
     font-size: 1.6rem;
   }
-
   .hero-text p {
     max-width: 100%;
   }
-
   .booking-form-wrapper {
     max-width: 600px;
     margin: 1rem auto 0 auto;
-    width: auto; /* avoid full width */
+    width: auto;
     position: relative;
   }
-
   .dish-card {
     width: 100%;
   }
-
   .dish-name {
     font-size: 20px;
   }
-
   .dish-description {
     font-size: 16px;
   }
-
-  /* Testimonials: stacked vertically for narrow screens */
   .testimonials-container {
     flex-direction: column;
     align-items: center;
   }
-
   .testimonial-card {
     width: 90%;
     max-width: 300px;
   }
-
-  /* Creators Section: column layout for small devices */
   .creators-images {
     height: auto;
     flex-direction: column;
@@ -704,7 +695,6 @@
     gap: 1.2rem;
     position: static;
   }
-
   .creator-image,
   .creator-image.first,
   .creator-image.second {
@@ -713,19 +703,15 @@
     width: 140px;
     height: 140px;
   }
-
   .creators-text h2 {
     font-size: 2rem;
   }
-
   .creators-text h3 {
     font-size: 1.2rem;
   }
-
   .creators-text p {
     font-size: 0.95rem;
   }
-
   .scroll-top-btn {
     width: 35px;
     height: 35px;
@@ -733,16 +719,13 @@
     bottom: 12px;
     right: 12px;
   }
-
- .confirmation-message {
+  .confirmation-message {
     padding: 1.5rem 1rem;
     margin: 1rem;
   }
-
   .confirmation-message h1 {
     font-size: 2rem;
   }
-
   .confirmation-message p {
     font-size: 1rem;
   }
@@ -756,7 +739,6 @@
     justify-items: center;
     padding: 1rem 1rem 2rem 1rem;
   }
-
   .nav-list {
     flex-direction: column;
     gap: 1rem;
@@ -764,17 +746,14 @@
     width: auto;
     justify-content: center;
   }
-
   .nav-list li a {
     font-size: 1.2rem;
   }
-
   .site-footer-container {
     grid-template-columns: 1fr;
     justify-items: center;
     gap: 2rem;
   }
-
   .footer-section,
   .footer-logo {
     min-width: auto;
@@ -782,121 +761,99 @@
     align-items: center;
     text-align: center;
   }
-
   .footer-nav-list,
   .footer-contact-list,
   .footer-social-list {
     align-items: center;
   }
-
   .content-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
   }
-
   .form-inside {
     max-width: 600px;
     width: 100%;
     margin: 1rem auto 0 auto;
   }
-
   .reserve-button {
-    width: 200px; /* smaller button for small screens */
+    width: 200px;
   }
-
   .booking-form-wrapper {
     max-width: 600px;
     width: 100%;
     margin: 1rem auto 0 auto;
     position: relative;
   }
-
   .hero-image img {
     position: relative;
     right: var(--image-laptop-right);
-    margin-top: -11rem;;
+    margin-top: -11rem;
     width: clamp(250px, 35vw, 360px);
     max-height: 400px;
   }
-
   .hero-text {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-
   .hero-text h1,
   .hero-text h3,
   .reserve-button {
     text-align: center;
     margin: 0 auto;
   }
-
   .hero-text p {
     text-align: center;
     margin: 1rem auto 3rem auto;
   }
-
   .dish-card-container {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
   }
-
   .dishes-header h1 {
     margin-left: 0.6rem;
   }
-
   .dish-card {
     width: 90%;
     max-width: 400px;
     margin: 0 auto;
   }
-
-  /* Testimonials horizontal row with background */
   .testimonials-container {
     flex-direction: row;
     background-color: #FDF4EE;
     justify-content: center;
     gap: 1rem;
   }
-
   .testimonial-card {
     width: 180px;
     padding: 1.2rem;
   }
-
   .testimonial-review {
     font-size: 0.85rem;
   }
-
   .testimonial-name {
     font-size: 0.8rem;
   }
-
   .testimonial-image {
     width: 50px;
     height: 50px;
   }
-
-  /* Creators Section in column */
   .creators-section {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-
   .creators-text {
     order: 1;
   }
-
   .creators-images {
     order: 2;
     display: flex;
-    flex-direction: row; /* images horizontally */
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
@@ -905,14 +862,12 @@
     position: static;
     height: auto;
   }
-
   .creator-image {
     position: static;
     width: 160px;
     height: 160px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
-
   .creator-image.first,
   .creator-image.second {
     position: static;
@@ -923,15 +878,12 @@
     height: 160px;
     object-fit: cover;
   }
-
   .creators-text h2 {
     font-size: 2.2rem;
   }
-
   .creators-text h3 {
     font-size: 1.5rem;
   }
-
   .scroll-top-btn {
     width: 40px;
     height: 40px;
@@ -939,16 +891,13 @@
     bottom: 15px;
     right: 15px;
   }
-
- .confirmation-message {
+  .confirmation-message {
     max-width: 90%;
     margin: 2rem auto;
   }
-
   .confirmation-message h1 {
     font-size: 2.2rem;
   }
-
   .confirmation-message p {
     font-size: 1.1rem;
   }
@@ -962,57 +911,46 @@
     width: clamp(250px, 35vw, 360px);
     max-height: 400px;
   }
-
   .form-outside {
     max-width: 400px;
     margin: 1rem 0 0 0;
     position: relative;
     left: 0;
   }
-
   .reserve-button {
     max-width: 300px;
     width: 100%;
   }
-
-  /* Testimonials: center and wrap */
   .testimonials-container {
     justify-content: center;
     flex-wrap: wrap;
     gap: 1.5rem;
   }
-
   .testimonial-card {
     width: 200px;
   }
-
-  /* Creators Section: row with gaps */
   .creators-section {
     flex-direction: row;
     gap: 1.5rem;
   }
-
   .creator-image.first {
     left: 150px;
   }
-
   .creator-image.second {
     left: 270px;
   }
-   .confirmation-message {
+  .confirmation-message {
     max-width: 80%;
   }
 }
 
 /* Desktop: min-width 1201px */
-/* Important: constrain content wrapper and center it */
 @media (min-width: 1201px) {
   .content-wrapper {
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
   }
-
   .form-outside {
     max-width: 400px;
     margin-top: 1rem;
@@ -1020,11 +958,9 @@
     position: relative;
     left: 0;
   }
-
   .reserve-button {
     width: 300px;
   }
-
   .hero-image img {
     position: absolute;
     right: var(--image-desktop-right);
@@ -1032,6 +968,4 @@
     width: clamp(var(--image-width-min), 30vw, var(--image-width-max));
     max-height: 400px;
   }
-
-  /* Testimonials: desktop layout managed by base styles */
 }

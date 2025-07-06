@@ -1,10 +1,10 @@
 // Questo va all'inizio, prima di importare Main
+import { initializeTimes, updateTimes } from '../Main'
+
 jest.mock('react-router-dom', () => ({
   useLocation: () => ({ search: '' }),
   MemoryRouter: ({ children }) => children,
 }));
-
-import { initializeTimes, updateTimes } from './Main';
 
 describe('initializeTimes', () => {
   test('should return the initial list of available times', () => {

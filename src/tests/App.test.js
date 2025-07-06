@@ -1,12 +1,10 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import App from './App';
+import App from '../App';
 
-// Mock dei componenti lazy per evitare errori nei test
-jest.mock('./Testimonials', () => () => <div data-testid="testimonials">Mocked Testimonials</div>);
-jest.mock('./Creators', () => () => <div data-testid="creators">Mocked Creators</div>);
+jest.mock('../Testimonials', () => () => <div data-testid="testimonials">Mocked Testimonials</div>);
+jest.mock('../Creators', () => () => <div data-testid="creators">Mocked Creators</div>);
 
-// Test base su App
 test('renders the main page correctly', async () => {
   render(
     <MemoryRouter initialEntries={['/']}>
@@ -14,11 +12,9 @@ test('renders the main page correctly', async () => {
     </MemoryRouter>
   );
 
-  // Verifica un testo o elemento chiave
   expect(screen.getByText(/Make Your Reservation/i)).toBeInTheDocument();
 });
 
-// Test form BookingForm
 test('BookingForm input fields respond correctly', () => {
   render(
     <MemoryRouter initialEntries={['/booking']}>
@@ -36,7 +32,6 @@ test('BookingForm input fields respond correctly', () => {
   expect(guestsInput.value).toBe('4');
 });
 
-// Test mock components lazy loading
 test('Lazy components render mocked fallback', async () => {
   render(
     <MemoryRouter initialEntries={['/testimonials']}>
