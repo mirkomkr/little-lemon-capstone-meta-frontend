@@ -44,7 +44,6 @@ Initial prototypes and wireframes were designed in Figma, with a focus on User E
 The application will be available at `http://localhost:3000`.
 
 ## ✍️ Author
-
 * **Mirko Passeri**
     * [GitHub](https://github.com/mirkomkr)
     * [LinkedIn](https://www.linkedin.com/in/mirko-passeri/)
